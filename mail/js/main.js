@@ -19,6 +19,19 @@
 // controlla che sia nella lista di chi può accedere
 // stampa un messaggio appropriato sull'esito del controllo.
 
+
+// PARTE GRAFICA
+// chiedere mail all'utente tramite uno form con value
+// controllare se la mail è presente nell'array
+// stampare sulla pagina il risultato
+// 
+// 
+// 
+// 
+const insertMailEl = document.getElementById("insert-mail");
+const logInButtonEl = document.getElementById("control-button");
+const finaleResultEl = document.getElementById("result");
+// console.log(insertMailEl);
 // Creare un array con una lista di mail
 const mails = [
     "pippo@hotmail.com",
@@ -28,30 +41,38 @@ const mails = [
     "pluto@gmail.com",
     "topolino@gmail.com"
 ]
+logInButtonEl.addEventListener(
+    "click",
+    function () {
 
-// CHIEDO ALL'UTENTE LA PROPRIA MAIL 
-const userMail = prompt(`Inserire il tuo indirizzo mail`);
+        // CHIEDO ALL'UTENTE LA PROPRIA MAIL 
+        // const userMail = prompt(`Inserire il tuo indirizzo mail`);
+        const userMail = insertMailEl.value;
+        console.log(userMail);
 
-// CREO UNO SWITCH
-let mailInList = false;
-for (let i = 0; i < mails.length; i++) {
-    if (userMail == mails[i]) {
-        // SE LAL MAIL DELL'UTENTE E' NELL' ARRAY DAI IL BENVENUTO
-        mailInList = true;
-        console.log(`Benvenuto ${mails[i]}`);
+        // CREO UNO SWITCH
+        let mailInList = false;
+        for (let i = 0; i < mails.length; i++) {
+            if (userMail == mails[i]) {
+                // SE LAL MAIL DELL'UTENTE E' NELL' ARRAY DAI IL BENVENUTO
+                mailInList = true;
+                // console.log(`Benvenuto ${mails[i]}`);
+                finaleResultEl.innerHTML = (`Benvenuto ${mails[i]}`);
+            }
+        }
 
-    }
-}
+        // SE LA MAIL DELL'UTENTE NON E' NELL' ARRAY DAI IL MESSAGGIO DI NON ESSERE REGISTRATO
+        if (mailInList == false) {
+            // console.log(`Il nome utente "${userMail}" non è registrato.`);
+            finaleResultEl.innerHTML = (`Il nome utente "${userMail}" non è registrato.`);
 
-// SE LA MAIL DELL'UTENTE NON E' NELL' ARRAY DAI IL MESSAGGIO DI NON ESSERE REGISTRATO
-if (mailInList == false) {
-    console.log(`Il nome utente "${userMail}" non è registrato.`);
-}
-// for (let i = 0; i < mails.length; i++) {
-//     if (userMail == mails[i]) {
-//         console.log(`Benvenuto ${mails[i]} `);
-//     } else {
-//         console.log(`Questo nome utente ${userMail} non è registrato`);
-//     }
-// }
-// console.log(`Si prega di registrarsi per accedere`)
+        }
+    })
+        // for (let i = 0; i < mails.length; i++) {
+            //     if (userMail == mails[i]) {
+                //         console.log(`Benvenuto ${mails[i]} `);
+                //     } else {
+                    //         console.log(`Questo nome utente ${userMail} non è registrato`);
+                    //     }
+                    // }
+                    // console.log(`Si prega di registrarsi per accedere`)
