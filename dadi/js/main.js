@@ -10,9 +10,20 @@
 // IF  giocatore ha un numero > della cpu, messaggio output che dichiara vincente il giocatore
 // ELSE IF giocatore ha numero < cpu, messaggio output che dichiara vincente la cpu
 // ELSE giocatore e cpu hanno lo stesso numero, messaggio output che dichiara parità
-// 
-// 
 
+
+// PARTE GRAFICA
+// Creare 2 bottoni per generare il lancio di dadi (player - cpu) e scrivere il numero
+// Creare bottone per confrontare i 2 lanci di dadi
+// assegnare le funzioni ai bottoni 
+// scrivere il messaggio per il vincitore
+const buttonPlayerEl = document.getElementById("player-button");
+// console.log(buttonPlayerEl);
+const buttonCpuEl = document.getElementById("cpu-button");
+// console.log(buttonPlayerEl);
+const resultPlayer = document.getElementById("result-player");
+const resultCpu = document.getElementById("result-cpu");
+const finalResult = document.getElementById("result");
 
 // Scrivere la funzione per generare un numero casuale da 1 a 6
 const randomNumberDiceCpu = Math.floor(Math.random() * 6 + 1);
@@ -22,18 +33,64 @@ const randomNumberDicePlayer = Math.floor(Math.random() * 6 + 1);
 const cpuNumber = randomNumberDiceCpu;
 const playerNumber = randomNumberDicePlayer;
 
-console.log('dado CPU:  ' + cpuNumber);
-console.log('dado Player: ' + playerNumber);
+
+buttonPlayerEl.addEventListener(
+    'click',
+    function () {
+        randomNumberDicePlayer;
+        // alert(randomNumberDicePlayer);
+        randomNumberDiceCpu;
+        // alert(randomNumberDicePlayer);
+        resultPlayer.innerHTML = (`PLAYER <br> ${playerNumber}`);
+        resultCpu.innerHTML = (`CPU <br> ${cpuNumber}`);
+        if (playerNumber > cpuNumber) {
+            finalResult.innerHTML = (`Il giocatore vince`);
+            // console.log(`Il giocatore vince`);
+
+            // ELSE IF giocatore ha numero < cpu, messaggio output che dichiara vincente la cpu
+        } else if (playerNumber < cpuNumber) {
+            finalResult.innerHTML = (`La CPU vince`);
+
+            // console.log(`La CPU vince`);
+
+            // ELSE giocatore e cpu hanno lo stesso numero, messaggio output che dichiara parità
+        } else {
+            finalResult.innerHTML = (`Parità`);
+
+            // console.log(`Parità`);
+        }
+    }
+
+)
+// buttonCpuEl.addEventListener(
+//     'click',
+//     function () {
+//         randomNumberDiceCpu;
+//         // alert(randomNumberDicePlayer);
+//         resultCpu.innerHTML = cpuNumber;
+//     }
+
+// )
+
+
+
+// console.log('dado CPU:  ' + cpuNumber);
+// console.log('dado Player: ' + playerNumber);
 
 // IF  giocatore ha un numero > della cpu, messaggio output che dichiara vincente il giocatore
-if (playerNumber > cpuNumber) {
-    console.log(`Il giocatore vince`);
+// if (playerNumber > cpuNumber) {
+//     finalResult.innerHTML = (`Il giocatore vince`);
+//     // console.log(`Il giocatore vince`);
 
-    // ELSE IF giocatore ha numero < cpu, messaggio output che dichiara vincente la cpu
-} else if (playerNumber < cpuNumber) {
-    console.log(`La CPU vince`);
+//     // ELSE IF giocatore ha numero < cpu, messaggio output che dichiara vincente la cpu
+// } else if (playerNumber < cpuNumber) {
+//     finalResult.innerHTML = (`La CPU vince`);
 
-    // ELSE giocatore e cpu hanno lo stesso numero, messaggio output che dichiara parità
-} else {
-    console.log(`Parità`);
-}
+//     // console.log(`La CPU vince`);
+
+//     // ELSE giocatore e cpu hanno lo stesso numero, messaggio output che dichiara parità
+// } else {
+//     finalResult.innerHTML = (`Parità`);
+
+//     // console.log(`Parità`);
+// }
