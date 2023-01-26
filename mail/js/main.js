@@ -16,12 +16,42 @@
 
 
 
-// Creare un array con una lista di mail
-// Chiedi all'utente la sua email
 // controlla che sia nella lista di chi può accedere
 // stampa un messaggio appropriato sull'esito del controllo.
 
-
+// Creare un array con una lista di mail
 const mails = [
-
+    "pippo@hotmail.com",
+    "pluto@hotmail.com",
+    "topolino@hotmail.com",
+    "pippo@gmail.com",
+    "pluto@gmail.com",
+    "topolino@gmail.com"
 ]
+
+// CHIEDO ALL'UTENTE LA PROPRIA MAIL 
+const userMail = prompt(`Inserire il tuo indirizzo mail`);
+
+// CREO UNO SWITCH
+let mailInList = false;
+for (let i = 0; i < mails.length; i++) {
+    if (userMail == mails[i]) {
+        // SE LAL MAIL DELL'UTENTE E' NELL' ARRAY DAI IL BENVENUTO
+        mailInList = true;
+        console.log(`Benvenuto ${mails[i]}`);
+
+    }
+}
+
+// SE LA MAIL DELL'UTENTE NON E' NELL' ARRAY DAI IL MESSAGGIO DI NON ESSERE REGISTRATO
+if (mailInList == false) {
+    console.log(`Il nome utente "${userMail}" non è registrato.`);
+}
+// for (let i = 0; i < mails.length; i++) {
+//     if (userMail == mails[i]) {
+//         console.log(`Benvenuto ${mails[i]} `);
+//     } else {
+//         console.log(`Questo nome utente ${userMail} non è registrato`);
+//     }
+// }
+// console.log(`Si prega di registrarsi per accedere`)
