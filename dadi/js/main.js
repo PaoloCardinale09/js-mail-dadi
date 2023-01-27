@@ -26,17 +26,18 @@ const resultCpu = document.getElementById("result-cpu");
 const finalResult = document.getElementById("result");
 
 // Scrivere la funzione per generare un numero casuale da 1 a 6
-const randomNumberDiceCpu = Math.floor(Math.random() * 6 + 1);
-const randomNumberDicePlayer = Math.floor(Math.random() * 6 + 1);
 
-// Dichiarare un numero casuale per il giocatore e per la cpu
-const cpuNumber = randomNumberDiceCpu;
-const playerNumber = randomNumberDicePlayer;
 
 
 buttonPlayerEl.addEventListener(
     'click',
     function () {
+        const randomNumberDiceCpu = Math.floor(Math.random() * 6 + 1);
+        const randomNumberDicePlayer = Math.floor(Math.random() * 6 + 1);
+
+        // Dichiarare un numero casuale per il giocatore e per la cpu
+        const cpuNumber = randomNumberDiceCpu;
+        const playerNumber = randomNumberDicePlayer;
         randomNumberDicePlayer;
         // alert(randomNumberDicePlayer);
         randomNumberDiceCpu;
@@ -44,7 +45,7 @@ buttonPlayerEl.addEventListener(
         resultPlayer.innerHTML = (`PLAYER <br> ${playerNumber}`);
         resultCpu.innerHTML = (`CPU <br> ${cpuNumber}`);
         if (playerNumber > cpuNumber) {
-            finalResult.innerHTML = (`Il giocatore vince`);
+            finalResult.innerHTML = (`Il GIOCATORE vince`);
             // console.log(`Il giocatore vince`);
 
             // ELSE IF giocatore ha numero < cpu, messaggio output che dichiara vincente la cpu
