@@ -62,8 +62,13 @@ logInButtonEl.addEventListener(
         }
 
         // SE LA MAIL DELL'UTENTE NON E' NELL' ARRAY DAI IL MESSAGGIO DI NON ESSERE REGISTRATO
-        if (mailInList == false) {
+        if (mailInList) {
+            finaleResultEl.innerHTML = (`Benvenuto ${mails[i]}`);
+
             // console.log(`Il nome utente "${userMail}" non è registrato.`);
+            // finaleResultEl.innerHTML = (`Il nome utente "${userMail}" non è registrato.`);
+
+        } else {
             finaleResultEl.innerHTML = (`Il nome utente "${userMail}" non è registrato.`);
 
         }
